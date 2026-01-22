@@ -1,0 +1,137 @@
+{
+    "info": {
+        "name": "Coffee Shop Bonus Point System",
+        "_postman_id": "12345-abcde",
+        "description": "Postman collection to test all APIs for the coffee shop bonus point system.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Coffee",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Espresso\",\n  \"price\": 120\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/coffees",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "coffees"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Coffees",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/coffees",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "coffees"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Register Member",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"memberId\": \"M001\",\n  \"name\": \"John Doe\",\n  \"phone\": \"017xxxxxxxx\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/members",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "members"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Purchase Coffee",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"memberId\": \"M001\",\n  \"coffeeId\": \"<replace_with_coffee_id>\",\n  \"quantity\": 2\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/purchase",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "purchase"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Redeem Points",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"pointsToUse\": 10,\n  \"price\": 200\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/members/M001/redeem",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "members",
+                        "M001",
+                        "redeem"
+                    ]
+                }
+            }
+        }
+    ]
+}
